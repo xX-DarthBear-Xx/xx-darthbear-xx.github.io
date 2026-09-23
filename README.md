@@ -1,25 +1,58 @@
-# DarthBear · Portafolio
+<div align="center">
 
-Sitio estático (HTML/CSS/JS), sin dependencias ni build.
+<img src="assets/logo.svg" alt="DarthBear" width="96">
 
-## Probar en local
-    python3 -m http.server 8000   # http://localhost:8000
+# DARTHBEAR
+**Offensive Security · Networks · Linux · Python**
 
-## Publicar en GitHub Pages
-1. Crea un repositorio público, por ejemplo `darthbear-portfolio` (o `TU-USUARIO.github.io` para usar la URL raíz).
-2. Sube estos archivos:
-       git init && git add . && git commit -m "Portafolio inicial"
-       git branch -M main
-       git remote add origin https://github.com/TU-USUARIO/darthbear-portfolio.git
-       git push -u origin main
-3. En GitHub: Settings → Pages → Source: "Deploy from a branch" → `main` / `/ (root)`.
-4. En un par de minutos estará en `https://TU-USUARIO.github.io/darthbear-portfolio/`.
+*Break. Understand. Secure.*
 
-## Personalizar
-- Reemplaza `TU-USUARIO` y `tu@correo.com` en `index.html`.
-- Nuevo writeup: copia `writeups/ghostlink.html`, edítalo y enlázalo desde `index.html`.
-- Colores: variables en `:root` de `styles.css`.
+[Portafolio](https://TU-USUARIO.github.io) · [GitHub](https://github.com/TU-USUARIO) · [LinkedIn](https://linkedin.com/in/TU-USUARIO) · [Email](mailto:tu@correo.com)
 
-## Imágenes opcionales
-- `assets/hero.jpg`: fondo del hero (montañas + oso). Sin ella se ve un degradado.
-- `assets/bear.jpg`: retrato de la tarjeta "About me".
+</div>
+
+---
+
+## Sobre mí
+
+Soy un apasionado por la ciberseguridad, con enfoque en seguridad ofensiva, redes y Linux. Estoy preparando la certificación **eJPT** y desarrollo proyectos propios para seguir creciendo profesionalmente.
+
+📍 Costa Rica · 🎓 eJPT (en preparación) · ❤️ APA / BLS (certificado)
+
+> "I don't want to memorize tools. I want to understand what happens underneath."
+
+## Qué encontrarás aquí
+
+- **Writeups**: máquinas de Hack The Box y laboratorios, con el proceso completo y lo que aprendí.
+- **Proyectos**: herramientas propias en Python para reconocimiento y análisis de vulnerabilidades.
+- **Lab**: mi avance en máquinas y áreas de estudio.
+- **Roadmap**: redes → Linux → seguridad web → escalada de privilegios → seguridad ofensiva.
+
+## Proyectos destacados
+
+| Proyecto | Descripción |
+|---|---|
+| [darthbear-recon](https://github.com/TU-USUARIO/darthbear-recon) | Framework de reconocimiento automatizado para laboratorios de pentesting |
+| [vuln-scanner](https://github.com/TU-USUARIO/vuln-scanner) | Escáner de vulnerabilidades con correlación de CVE y referencias a PoC |
+| [payloads](https://github.com/TU-USUARIO/payloads) | Colección de payloads y scripts de explotación |
+
+## Áreas de trabajo
+
+- **Pentesting:** web, redes, Active Directory, escalada de privilegios
+- **Redes:** TCP/IP, DNS, HTTP/HTTPS, SMB, MQTT
+- **Linux:** administración, scripting y automatización
+- **Python:** herramientas de seguridad y análisis de datos
+
+## Mi entorno
+
+`Kali Linux` · `zsh` · `bspwm` · `kitty` · `VS Code`
+
+---
+
+<div align="center">
+
+Learn → Break → Understand → Build → Secure
+
+</div>
+
+> Todo el contenido de este repositorio es con fines educativos y en entornos de laboratorio autorizados.
