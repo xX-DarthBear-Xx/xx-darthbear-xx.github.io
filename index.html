@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DarthBear · Offensive Security</title>
+<meta name="description" content="Portafolio de DarthBear: writeups de HTB, proyectos en Python, redes y Linux.">
+<link rel="icon" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></symbol>
+<symbol id="code" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M10 9l-3 3 3 3M14 9l3 3-3 3"/></symbol>
+<symbol id="nodes" viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.5"/><circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="17" r="2.5"/><path d="M12 8.5v3M10.5 12.5L7.5 15M13.5 12.5l3 2.5"/></symbol>
+<symbol id="py" viewBox="0 0 24 24"><path d="M9 4c-2 0-3 1-3 3v2c0 1-1 2-2 3 1 1 2 2 2 3v2c0 2 1 3 3 3M15 4c2 0 3 1 3 3v2c0 1 1 2 2 3-1 1-2 2-2 3v2c0 2-1 3-3 3"/></symbol>
+<symbol id="doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"/></symbol>
+<symbol id="ghost" viewBox="0 0 24 24"><path d="M6 20V11a6 6 0 0112 0v9l-3-2-3 2-3-2zM10 11h.01M14 11h.01"/></symbol>
+<symbol id="win" viewBox="0 0 24 24"><path d="M3 5l8-1v7H3zM13 4l8-1v8h-8zM3 13h8v7l-8-1zM13 13h8v8l-8-1z"/></symbol>
+<symbol id="db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></symbol>
+<symbol id="term" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M12 16h5"/></symbol>
+<symbol id="radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 12l6-6"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 012 2v13a2 2 0 00-2-2H4zM20 5h-6a2 2 0 00-2 2v13a2 2 0 012-2h6z"/></symbol>
+<symbol id="screen" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></symbol>
+<symbol id="mtn" viewBox="0 0 24 24"><path d="M3 19l6-11 4 7 3-4 5 8z"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2 9 2 12 0v-5"/></symbol>
+<symbol id="heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 018-2.5A4.5 4.5 0 0120 9c0 6-8 11-8 11z"/></symbol>
+<symbol id="gh" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 8v8M18 10c0 4-6 3-12 6"/></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+<symbol id="in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v6M8 8v.01M12 17v-6M12 13c0-3 5-3 5 0v4"/></symbol>
+<symbol id="ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</defs></svg>
+
+<header class="top">
+  <a class="tb" href="#home"><img src="assets/logo.svg" alt="" width="34" height="34"><b>DARTHBEAR</b></a><span class="sl">/</span>
+  <nav aria-label="Principal"><a class="on" href="#home">home</a><a href="#about">about</a><a href="#lab">lab</a><a href="#writeups">writeups</a><a href="#projects">projects</a><a href="#skills">skills</a><a href="#blog">blog</a><a href="#contact">contact</a></nav>
+  <button class="prompt" id="open" aria-label="Abrir terminal">darthbear@portfolio:~$ <i>_</i></button>
+</header>
+
+<aside class="side">
+  <div class="brand"><img src="assets/logo.svg" alt="" width="110" height="110"><b>DARTHBEAR</b><span>OFFENSIVE SECURITY</span></div>
+  <nav aria-label="Secundario"><a href="#" id="help">$ help</a><a href="#about">about</a><a href="#lab">lab</a><a href="#writeups">writeups</a><a href="#projects">projects</a><a href="#skills">skills</a><a href="#blog">blog</a><a href="#contact">contact</a></nav>
+  <blockquote>“I don't want to memorize tools. I want to understand what happens underneath.”<cite>- DarthBear</cite></blockquote>
+  <div class="soc"><a href="https://github.com/TU-USUARIO"><svg class="i"><use href="#gh"/></svg>GitHub</a><a href="https://linkedin.com/in/TU-USUARIO"><svg class="i"><use href="#in"/></svg>LinkedIn</a><a href="mailto:tu@correo.com"><svg class="i"><use href="#mail"/></svg>Email</a></div>
+  <div class="stack">Kali Linux &nbsp;|&nbsp; zsh &nbsp;|&nbsp; bspwm<div class="bar"><i style="width:22%"></i></div></div>
+</aside>
+
+<main>
+  <section id="home" class="hero">
+    <p class="k">HEY, I'M</p>
+    <h1>DARTHBEAR</h1>
+    <p class="tags">CYBERSECURITY <s>/</s> NETWORKS <s>/</s> LINUX <s>/</s> OFFENSIVE SECURITY</p>
+    <p class="motto">Break. Understand. Secure.</p>
+    <p><a class="btn pr" href="#projects">VIEW MY PROJECTS <svg class="i"><use href="#ar"/></svg></a><a class="btn" href="#about">ABOUT ME</a></p>
+  </section>
+
+  <div class="g4">
+    <article class="card pil"><svg class="i big"><use href="#shield"/></svg><h3>PENTESTING</h3><p>Web, Network, Active Directory, Privilege Escalation, Red Team.</p></article>
+    <article class="card pil"><svg class="i big"><use href="#code"/></svg><h3>LINUX</h3><p>Administration, Scripting, Automation, Custom Tools.</p></article>
+    <article class="card pil"><svg class="i big"><use href="#nodes"/></svg><h3>NETWORKS</h3><p>TCP/IP, DNS, HTTP/HTTPS, SMB, MQTT, Routing.</p></article>
+    <article class="card pil"><svg class="i big"><use href="#py"/></svg><h3>PYTHON</h3><p>Automation, Scripting, Security Tools, Data Analysis.</p></article>
+  </div>
+
+  <div class="g3">
+    <section class="card" id="writeups">
+      <h2><svg class="i"><use href="#doc"/></svg>FEATURED WRITEUPS<svg class="i go"><use href="#ar"/></svg></h2>
+      <a class="row" href="writeups/ghostlink.html"><span class="ic"><svg class="i"><use href="#ghost"/></svg></span><span><b>GhostLink - HTB</b><time>2026-09-17</time><em>#linux #mqtt #priv-esc</em></span></a>
+      <a class="row" href="#"><span class="ic"><svg class="i"><use href="#win"/></svg></span><span><b>Windows UNC Path Abuse</b><time>2026-09-13</time><em>#windows #smb #lfi</em></span></a>
+      <a class="row" href="#"><span class="ic"><svg class="i"><use href="#db"/></svg></span><span><b>SQL Injection - Lab</b><time>2026-08-28</time><em>#web #sqli #owasp</em></span></a>
+      <a class="row" href="#"><span class="ic"><svg class="i"><use href="#code"/></svg></span><span><b>Buffer Overflow - Exploit Dev</b><time>2026-08-15</time><em>#binary #overflow #poc</em></span></a>
+      <a class="row" href="#"><span class="ic"><svg class="i"><use href="#nodes"/></svg></span><span><b>Active Directory Enumeration</b><time>2026-08-02</time><em>#ad #bloodhound #recon</em></span></a>
+      <a class="more" href="#writeups" id="blog">View all writeups <svg class="i s"><use href="#ar"/></svg></a>
+    </section>
+
+    <section class="card" id="projects">
+      <h2><svg class="i"><use href="#code"/></svg>LATEST PROJECTS<svg class="i go"><use href="#ar"/></svg></h2>
+      <div class="proj"><span class="ic sq"><svg class="i"><use href="#term"/></svg></span><div><b>darthbear-recon</b><p>Automated reconnaissance framework for penetration testing labs.</p><em>#python #recon #nmap</em><div class="bt"><a href="https://github.com/TU-USUARIO/darthbear-recon"><svg class="i s"><use href="#gh"/></svg>GitHub</a><a href="#"><svg class="i s"><use href="#doc"/></svg>Docs</a></div></div></div>
+      <div class="proj"><span class="ic sq"><svg class="i"><use href="#radar"/></svg></span><div><b>vuln-scanner</b><p>Vulnerability scanner with CVE correlation and PoC references.</p><em>#python #scanner #cve</em><div class="bt"><a href="https://github.com/TU-USUARIO/vuln-scanner"><svg class="i s"><use href="#gh"/></svg>GitHub</a><a href="#"><svg class="i s"><use href="#doc"/></svg>Docs</a></div></div></div>
+      <div class="proj"><span class="ic sq"><svg class="i"><use href="#term"/></svg></span><div><b>payloads</b><p>Collection of useful payloads and exploitation scripts.</p><em>#pentest #payloads #exploit</em><div class="bt"><a href="https://github.com/TU-USUARIO/payloads"><svg class="i s"><use href="#gh"/></svg>GitHub</a><a href="#"><svg class="i s"><use href="#doc"/></svg>Docs</a></div></div></div>
+      <a class="more" href="#projects">View all projects <svg class="i s"><use href="#ar"/></svg></a>
+    </section>
+
+    <section class="card" id="lab">
+      <h2><svg class="i"><use href="#mtn"/></svg>LAB / HTB<svg class="i go"><use href="#ar"/></svg></h2>
+      <h4>Recent Machines</h4>
+      <ul class="m"><li><i class="d g"></i>GhostLink<b>100%</b><i class="d g"></i></li><li><i class="d a"></i>Machine #02<b>70%</b><i class="d a"></i></li><li><i class="d a"></i>Machine #03<b>40%</b><i class="d a"></i></li><li><i class="d a"></i>Machine #04<b>20%</b><i class="d a"></i></li></ul>
+      <h4 id="skills">Skills Progression</h4>
+      <ul class="sk"><li>Web Exploitation<span><i style="width:80%"></i></span><b>80%</b></li><li>Linux PrivEsc<span><i style="width:75%"></i></span><b>75%</b></li><li>Active Directory<span><i style="width:60%"></i></span><b>60%</b></li><li>Python<span><i style="width:65%"></i></span><b>65%</b></li><li>Network Enumeration<span><i style="width:70%"></i></span><b>70%</b></li><li>Binary Exploitation<span><i style="width:50%"></i></span><b>50%</b></li></ul>
+      <a class="more l" href="#lab">View full lab <svg class="i s"><use href="#ar"/></svg></a>
+    </section>
+  </div>
+
+  <div class="g3 b">
+    <section class="card" id="about">
+      <h2><svg class="i"><use href="#user"/></svg>ABOUT ME<svg class="i go"><use href="#ar"/></svg></h2>
+      <div class="ab"><div><p>Soy un apasionado por la ciberseguridad, con enfoque en seguridad ofensiva, redes y Linux. Actualmente me encuentro en proceso de certificación eJPT y desarrollando proyectos propios para seguir creciendo profesionalmente.</p>
+      <ul><li><svg class="i s"><use href="#pin"/></svg>Costa Rica</li><li><svg class="i s"><use href="#cap"/></svg>eJPT (en preparación)</li><li><svg class="i s"><use href="#heart"/></svg>APA / BLS (certificado)</li></ul></div><div class="photo" role="img" aria-label="Retrato de DarthBear"></div></div>
+    </section>
+    <section class="card">
+      <h2><svg class="i"><use href="#book"/></svg>KNOWLEDGE ROADMAP<svg class="i go"><use href="#ar"/></svg></h2>
+      <ol class="rm"><li><b>Networking</b><span>TCP/IP, DNS, HTTP, SMB, MQTT</span></li><li><b>Linux</b><span>Administration, Scripting, Bash</span></li><li><b>Web Security</b><span>SQLi, XSS, SSRF, LFI/RFI</span></li><li><b>Privilege Escalation</b><span>Linux, Windows, AD</span></li><li><b>Offensive Security</b><span>Red Team, Exploitation, eJPT</span></li></ol>
+    </section>
+    <section class="card" id="contact">
+      <h2><svg class="i"><use href="#screen"/></svg>CURRENT SETUP<svg class="i go"><use href="#ar"/></svg></h2>
+      <pre class="nf"><u>$ neofetch</u>
+OS:       Kali Linux
+WM:       bspwm
+Shell:    zsh
+Terminal: kitty
+Editor:   VS Code
+Focus:    Offensive Security</pre>
+      <div class="sw"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="fine">My tools. My environment. My playground.</p>
+    </section>
+  </div>
+</main>
+
+<footer><span>LEARN &nbsp;›&nbsp; BREAK &nbsp;›&nbsp; UNDERSTAND &nbsp;›&nbsp; BUILD &nbsp;›&nbsp; SECURE</span><span>DARTHBEAR // 2026</span></footer>
+
+<div class="term" id="term" hidden><div class="out" id="out" role="log" aria-live="polite">Escribe <b>help</b> para ver los comandos.</div><label><span>darthbear@portfolio:~$</span><input id="cmd" autocomplete="off" spellcheck="false" aria-label="Comando"></label></div>
+<script src="script.js"></script>
+</body>
+</html>
