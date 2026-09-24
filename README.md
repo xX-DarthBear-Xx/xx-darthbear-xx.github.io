@@ -7,7 +7,7 @@
 
 *Break. Understand. Secure.*
 
-[Portafolio](https://xx-darthbear-xx.github.io) · [GitHub](https://github.com/xX-DarthBear-Xx) · [LinkedIn](https://www.linkedin.com/in/kevin-carballo-herrera-245428389) · [Email](mailto:kevincarballoherrera@gmail.com)
+[Portafolio](https://xx-darthbear-xx.github.io) · [GitHub](https://github.com/xX-DarthBear-Xx) · [Hack The Box](https://app.hackthebox.com/users/828180) · [LinkedIn](https://www.linkedin.com/in/kevin-carballo-herrera-245428389) · [Email](mailto:kevincarballoherrera@gmail.com)
 
 </div>
 
@@ -30,7 +30,7 @@ Soy un apasionado por la ciberseguridad, con enfoque en seguridad ofensiva, rede
 
 - **Writeups**: próximamente, con máquinas de Hack The Box y laboratorios.
 - **Proyectos**: herramientas propias en Python para reconocimiento.
-- **Lab**: mi avance en máquinas y áreas de estudio.
+- **Lab**: mi progreso real en Hack The Box (máquinas resueltas, nivel y racha).
 - **Roadmap**: redes → Linux → seguridad web → escalada de privilegios → seguridad ofensiva.
 
 ## Proyecto destacado
