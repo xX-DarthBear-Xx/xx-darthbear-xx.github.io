@@ -32,9 +32,7 @@ Soy un apasionado por la ciberseguridad, con enfoque en seguridad ofensiva, rede
 
 | Proyecto | Descripción |
 |---|---|
-| [darthbear-recon](https://github.com/TU-USUARIO/darthbear-recon) | Framework de reconocimiento automatizado para laboratorios de pentesting |
-| [vuln-scanner](https://github.com/TU-USUARIO/vuln-scanner) | Escáner de vulnerabilidades con correlación de CVE y referencias a PoC |
-| [payloads](https://github.com/TU-USUARIO/payloads) | Colección de payloads y scripts de explotación |
+| [darthbear-recon](https://github.com/xX-DarthBear-Xx/recon) | Framework de reconocimiento automatizado para laboratorios de pentesting |
 
 ## Áreas de trabajo
 
