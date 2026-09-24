@@ -10,4 +10,4 @@ Settings → Pages → Deploy from a branch → `main` / `/ (root)`.
 - Los datos de contacto están en `index.html` y `README.md`.
 - Nuevo writeup: crear una carpeta `writeups/`, añadir una página HTML y enlazarla desde el módulo Writeups de `index.html` (reemplaza el bloque "Coming soon").
 - Colores: variables en `:root` de `styles.css`.
-- Imágenes opcionales: `assets/hero.jpg` (fondo del hero) y `assets/bear.jpg` (retrato de About).
+
