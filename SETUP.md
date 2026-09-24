@@ -11,3 +11,10 @@ Settings → Pages → Deploy from a branch → `main` / `/ (root)`.
 - Nuevo writeup: crear una carpeta `writeups/`, añadir una página HTML y enlazarla desde el módulo Writeups de `index.html` (reemplaza el bloque "Coming soon").
 - Colores: variables en `:root` de `styles.css`.
 
+
+## Agregar un writeup
+1. Copia `content/writeups/_template.md` a `content/writeups/nombre-maquina.md` y escríbelo (usa solo minúsculas y guiones en el nombre del archivo).
+2. Ejecuta `python3 build.py` (actualiza `content/writeups/index.json`).
+3. `git add . && git commit -m "Writeup: nombre" && git push`.
+El sitio lo muestra solo en la home, en `writeups.html` (con búsqueda y tags) y en `writeup.html?w=nombre-maquina`.
+Nota: en HTB solo se publican writeups de máquinas retiradas.
