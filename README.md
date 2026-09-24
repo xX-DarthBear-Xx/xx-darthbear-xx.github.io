@@ -7,7 +7,7 @@
 
 *Break. Understand. Secure.*
 
-[Portafolio](https://TU-USUARIO.github.io) · [GitHub](https://github.com/TU-USUARIO) · [LinkedIn](https://linkedin.com/in/TU-USUARIO) · [Email](mailto:tu@correo.com)
+[Portafolio](https://xx-darthbear-xx.github.io) · [GitHub](https://github.com/xX-DarthBear-Xx) · [LinkedIn](https://www.linkedin.com/in/kevin-carballo-herrera-245428389) · [Email](mailto:kevincarballoherrera@gmail.com)
 
 </div>
 
@@ -17,22 +17,27 @@
 
 Soy un apasionado por la ciberseguridad, con enfoque en seguridad ofensiva, redes y Linux. Estoy preparando la certificación **eJPT** y desarrollo proyectos propios para seguir creciendo profesionalmente.
 
-📍 Costa Rica · 🎓 eJPT (en preparación) · ❤️ APA / BLS (certificado)
+📍 Costa Rica · 🎓 eJPT (en preparación)
 
 > "I don't want to memorize tools. I want to understand what happens underneath."
 
+## Certificados
+
+- [Python Ofensivo (Hack4u.io)](https://hack4u.io/certificate/1647-6136-1045-3499)
+- [Introducción al Hacking (Hack4u.io)](https://hack4u.io/certificate/9980-1075-3789-9197)
+
 ## Qué encontrarás aquí
 
-- **Writeups**: máquinas de Hack The Box y laboratorios, con el proceso completo y lo que aprendí.
-- **Proyectos**: herramientas propias en Python para reconocimiento y análisis de vulnerabilidades.
+- **Writeups**: próximamente, con máquinas de Hack The Box y laboratorios.
+- **Proyectos**: herramientas propias en Python para reconocimiento.
 - **Lab**: mi avance en máquinas y áreas de estudio.
 - **Roadmap**: redes → Linux → seguridad web → escalada de privilegios → seguridad ofensiva.
 
-## Proyectos destacados
+## Proyecto destacado
 
 | Proyecto | Descripción |
 |---|---|
-| [darthbear-recon](https://github.com/xX-DarthBear-Xx/recon) | Framework de reconocimiento automatizado para laboratorios de pentesting |
+| [recon](https://github.com/xX-DarthBear-Xx/recon) | Framework de reconocimiento automatizado para laboratorios de pentesting |
 
 ## Áreas de trabajo
 
@@ -43,7 +48,7 @@ Soy un apasionado por la ciberseguridad, con enfoque en seguridad ofensiva, rede
 
 ## Mi entorno
 
-`Kali Linux` · `zsh` · `bspwm` · `kitty` · `VS Code`
+`Kali Linux` · `zsh` · `bspwm` · `kitty`
 
 ---
 

@@ -8,7 +8,7 @@ const cmds = {
   help: () => 'about  lab  writeups  projects  skills  blog  contact\nwhoami  ls  neofetch  clear  exit',
   whoami: () => (go('about'), 'darthbear'),
   ls: () => 'about/  lab/  writeups/  projects/  skills/  contact',
-  neofetch: () => 'OS: Kali Linux\nWM: bspwm\nShell: zsh\nTerminal: kitty\nFocus: Offensive Security',
+  neofetch: () => 'darthbear@kali\nOS: Kali GNU/Linux Rolling\nWM: bspwm\nShell: zsh\nTerminal: kitty\nTheme: Kali-Dark',
   'sudo rm -rf /': () => 'Nice try. Este portafolio sigue en pie.',
   clear: () => { out.textContent = ''; return ''; },
   exit: () => { term.hidden = true; return ''; }
