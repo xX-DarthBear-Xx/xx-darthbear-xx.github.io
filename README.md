@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.svg" alt="DarthBear" width="96">
+<img src="assets/logo.png" alt="DarthBear" width="96">
 
 # DARTHBEAR
 **Offensive Security · Networks · Linux · Python**
