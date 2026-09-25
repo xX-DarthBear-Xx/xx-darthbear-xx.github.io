@@ -17,3 +17,6 @@ Settings → Pages → Deploy from a branch → `main` / `/ (root)`.
 3. `git add . && git commit -m "Writeup: nombre" && git push`.
 El sitio lo muestra solo en la home, en `writeups.html` y en la terminal (`ls writeups`, `cat`, `open`). `build.py` también actualiza `sitemap.xml`.
 Nota: en HTB solo se publican writeups de máquinas retiradas.
+
+## Timeline
+Edítala en `index.html` (sección `id="timeline"`): cada `<li>` es un hito; la clase `now` marca el actual y `nx` el próximo.

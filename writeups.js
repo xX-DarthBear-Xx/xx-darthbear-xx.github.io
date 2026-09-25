@@ -17,7 +17,7 @@ const md=t=>{const L=t.replace(/\r/g,'').split('\n');let o='',i=0,m;
   if(!l.trim()){i++;continue}
   const b=[L[i++]];while(i<L.length&&L[i].trim()&&!/^(```|#{1,4}\s|>|\s*([-*]|\d+\.)\s)/.test(L[i]))b.push(L[i++]);o+=`<p>${inl(b.join(' '))}</p>`}
  return o};
-const fm=t=>{const m=t.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)/);if(!m)return[{},t];const o={};m[1].split('\n').forEach(l=>{const k=l.indexOf(':');if(k>0)o[l.slice(0,k).trim()]=l.slice(k+1).trim()});return[o,m[2]]};
+const fm=t=>{t=t.replace(/^\uFEFF/,'');const m=t.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)/);if(!m)return[{},t];const o={};m[1].split('\n').forEach(l=>{const k=l.indexOf(':');if(k>0)o[l.slice(0,k).trim()]=l.slice(k+1).trim()});return[o,m[2]]};
 const idx=()=>fetch('content/writeups/index.json').then(r=>r.ok?r.json():[]).catch(()=>[]);
 const meta=w=>[w.date,w.os,w.difficulty,w.minutes?w.minutes+' min':''].filter(Boolean).map(esc).join(' · ');
 const tags=w=>(w.tags||[]).map(t=>'#'+esc(t)).join(' ');

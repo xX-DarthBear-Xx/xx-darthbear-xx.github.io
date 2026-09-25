@@ -9,12 +9,14 @@ $('help').onclick=e=>{e.preventDefault();toggle()};
 // sistema de archivos virtual
 const REPO='https://github.com/xX-DarthBear-Xx/recon',HTB='https://app.hackthebox.com/users/828180';
 const HTBTXT='Script Kiddie · Level 26 · Apprentice\nMachines: 15/552 · Streak: 3 weeks\nRooted: Reactor, Cap, Enigma';
+const TL='2021 Nov    Se une a Hack The Box\n2026 Sep    Enigma y Cap (HTB)\n2026 Sep 15 Certificado: Python Ofensivo\n2026 Sep    Reactor (HTB)\n2026 Sep 23 Certificado: Introducción al Hacking\nAhora       Preparando el eJPT\nPróximo     Primeros writeups';
 const fs={'about.txt':'DarthBear · cybersecurity, networks and Linux.\nFocus: offensive security. Preparing eJPT.\nBased in Costa Rica.',
  'certs.txt':'Python Ofensivo (Hack4u.io)\nIntroducción al Hacking (Hack4u.io)\neJPT: en preparación',
  'htb.txt':HTBTXT+'\n(open htb.txt)',
  'contact.txt':'GitHub:   github.com/xX-DarthBear-Xx\nLinkedIn: linkedin.com/in/kevin-carballo-herrera-245428389\nEmail:    kevincarballoherrera@gmail.com',
  projects:{'recon.txt':'recon · automated reconnaissance framework for pentesting labs.\n'+REPO+'\n(open recon.txt)'},
- writeups:{}};
+ writeups:{},
+ 'timeline.txt':TL};
 const links={'htb.txt':HTB,'projects/recon.txt':REPO};
 let cwd=[];
 fetch('content/writeups/index.json').then(r=>r.ok?r.json():[]).catch(()=>[]).then(a=>a.forEach(w=>{const f=w.slug+'.md';
@@ -27,7 +29,7 @@ const setPs=()=>ps.textContent='darthbear@portfolio:'+(cwd.length?'~/'+cwd.join(
 const list=n=>Object.keys(n).sort().map(k=>isDir(n[k])?k+'/':k).join('  ')||'(vacío)';
 const tree=(n,p='')=>Object.keys(n).sort().map((k,i,a)=>{const l=i===a.length-1,sub=isDir(n[k])?tree(n[k],p+(l?'    ':'│   ')):'';return p+(l?'└── ':'├── ')+k+(isDir(n[k])?'/':'')+(sub?'\n'+sub:'')}).join('\n');
 const C={
- help:()=>'ls [dir]  cd <dir>  cat <file>  tree  pwd  open <file>\nhtb  certs  whoami  neofetch  clear  exit\nabout  lab  writeups  projects  skills  blog  contact  (ir a la sección)',
+ help:()=>'ls [dir]  cd <dir>  cat <file>  tree  pwd  open <file>\nhtb  certs  whoami  neofetch  clear  exit\nabout  lab  writeups  projects  roadmap  timeline  contact  (ir a la sección)',
  ls:a=>{const n=a[0]?at(parts(a[0])):at(cwd);return isDir(n)?list(n):typeof n==='string'?a[0]:'ls: no existe: '+a[0]},
  cd:a=>{const r=a[0]?parts(a[0]):[];if(!isDir(at(r)))return 'cd: no existe: '+(a[0]||'');cwd=r;setPs();return ''},
  pwd:()=>'/home/darthbear'+(cwd.length?'/'+cwd.join('/'):''),
@@ -41,7 +43,7 @@ const C={
  clear:()=>{out.textContent='';return ''},
  exit:()=>{term.hidden=true;return ''}
 };
-['about','lab','writeups','projects','skills','blog','contact'].forEach(s=>C[s]=()=>(go(s),'abriendo '+s+'...'));
+['about','lab','writeups','projects','roadmap','timeline','contact'].forEach(s=>C[s]=()=>(go(s),'abriendo '+s+'...'));
 const E={'sudo su':()=>'darthbear is not in the sudoers file. This incident will be reported.','sudo rm -rf /':()=>'Nice try. Este portafolio sigue en pie.','cat /etc/motd':()=>'Break. Understand. Secure.'};
 const run=c=>{if(E[c])return E[c]();const[n,...a]=c.split(/\s+/);return C[n]?C[n](a):c+': comando no encontrado. Prueba help'};
 const hist=[];let hi=0;
