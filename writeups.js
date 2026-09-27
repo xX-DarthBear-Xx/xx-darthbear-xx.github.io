@@ -21,7 +21,11 @@ const fm=t=>{t=t.replace(/^\uFEFF/,'');const m=t.match(/^---\r?\n([\s\S]*?)\r?\n
 const idx=()=>fetch('content/writeups/index.json').then(r=>r.ok?r.json():[]).catch(()=>[]);
 const meta=w=>[w.date,w.os,w.difficulty,w.minutes?w.minutes+' min':''].filter(Boolean).map(esc).join(' · ');
 const tags=w=>(w.tags||[]).map(t=>'#'+esc(t)).join(' ');
-const link=w=>'writeup.html?w='+encodeURIComponent(w.slug);
+const link=w=>w.url||('writeup.html?w='+encodeURIComponent(w.slug));
+
+const T={comingTitle:{es:'Coming soon',en:'Coming soon'},comingBody:{es:'Aquí publicaré mis writeups de Hack The Box y laboratorios.',en:'My Hack The Box and lab writeups will go here.'},
+ noResults:{es:'Sin resultados',en:'No results'},noResultsBody:{es:'Prueba con otra búsqueda o tag.',en:'Try another search or tag.'}};
+const L=()=>document.documentElement.lang==='en'?'en':'es';
 
 // Home: últimos 5
 const wl=$('#wlist');
@@ -30,12 +34,13 @@ if(wl)idx().then(a=>{if(!a.length)return;wl.innerHTML=a.slice(0,5).map(w=>`<a cl
 // Listado con búsqueda y filtro por tag
 const all=$('#wall');
 if(all)idx().then(a=>{let tag='',q='';const chips=$('#wt');
- const T=[...new Set(a.flatMap(w=>w.tags||[]))].sort();
+ const T2=[...new Set(a.flatMap(w=>w.tags||[]))].sort();
  const draw=()=>{const f=a.filter(w=>(!tag||(w.tags||[]).includes(tag))&&(w.title+' '+(w.summary||'')+' '+(w.tags||[]).join(' ')).toLowerCase().includes(q));
-  chips.innerHTML=T.map(t=>`<button class="${t===tag?'on':''}" data-t="${esc(t)}">#${esc(t)}</button>`).join('');
-  all.innerHTML=f.length?f.map(w=>`<article class="item"><h3><a href="${link(w)}">${esc(w.title)}</a></h3><time>${meta(w)}</time><p>${esc(w.summary||'')}</p><p class="tag">${tags(w)}</p></article>`).join(''):`<p class="soon"><b>${a.length?'Sin resultados':'Coming soon'}</b>${a.length?'Prueba con otra búsqueda o tag.':'Aquí publicaré mis writeups.'}</p>`};
+  chips.innerHTML=T2.map(t=>`<button class="${t===tag?'on':''}" data-t="${esc(t)}">#${esc(t)}</button>`).join('');
+  all.innerHTML=f.length?f.map(w=>`<article class="item"><h3><a href="${link(w)}">${esc(w.title)}</a></h3><time>${meta(w)}</time><p>${esc(w.summary||'')}</p><p class="tag">${tags(w)}</p></article>`).join(''):`<p class="soon"><b>${a.length?T.noResults[L()]:T.comingTitle[L()]}</b>${a.length?T.noResultsBody[L()]:T.comingBody[L()]}</p>`};
  chips.onclick=e=>{const t=e.target.dataset&&e.target.dataset.t;if(t!==undefined){tag=tag===t?'':t;draw()}};
- $('#wq').oninput=e=>{q=e.target.value.toLowerCase();draw()};draw()});
+ $('#wq').oninput=e=>{q=e.target.value.toLowerCase();draw()};draw();
+ document.addEventListener('darthbear:lang',draw)});
 
 // Visor de un writeup
 const view=$('#md');

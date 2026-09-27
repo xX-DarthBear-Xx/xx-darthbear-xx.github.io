@@ -7,7 +7,7 @@
 
 *Break. Understand. Secure.*
 
-[Portafolio](https://xx-darthbear-xx.github.io) · [GitHub](https://github.com/xX-DarthBear-Xx) · [Hack The Box](https://app.hackthebox.com/users/828180) · [LinkedIn](https://www.linkedin.com/in/kevin-carballo-herrera-245428389) · [Email](mailto:kevincarballoherrera@gmail.com)
+[Portafolio](https://xx-darthbear-xx.github.io) · [CV (PDF)](assets/cv.pdf) · [GitHub](https://github.com/xX-DarthBear-Xx) · [Hack The Box](https://app.hackthebox.com/users/828180) · [LinkedIn](https://www.linkedin.com/in/kevin-carballo-herrera-245428389) · [Email](mailto:kevincarballoherrera@gmail.com)
 
 </div>
 
@@ -28,7 +28,7 @@ Soy un apasionado por la ciberseguridad, con enfoque en seguridad ofensiva, rede
 
 ## Qué encontrarás aquí
 
-- **Writeups**: próximamente, con máquinas de Hack The Box y laboratorios.
+- **Writeups**: próximamente, con máquinas de Hack The Box y laboratorios (cada uno con su propia página y disponibles por [RSS](rss.xml)).
 - **Proyectos**: herramientas propias en Python para reconocimiento.
 - **Lab**: mi progreso real en Hack The Box (máquinas resueltas, nivel y racha).
 - **Roadmap**: redes → Linux → seguridad web → escalada de privilegios → seguridad ofensiva.
@@ -45,6 +45,10 @@ Soy un apasionado por la ciberseguridad, con enfoque en seguridad ofensiva, rede
 - **Redes:** TCP/IP, DNS, HTTP/HTTPS, SMB, MQTT
 - **Linux:** administración, scripting y automatización
 - **Python:** herramientas de seguridad y análisis de datos
+
+## Idiomas
+
+El sitio está disponible en español e inglés (botón arriba a la derecha).
 
 ## Mi entorno
 
