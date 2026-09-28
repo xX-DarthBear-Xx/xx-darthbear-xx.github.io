@@ -24,16 +24,21 @@ El sitio también los muestra en la home, en `writeups.html` (con búsqueda y ta
 Nota: en HTB solo se publican writeups de máquinas retiradas.
 
 ## Timeline
-Edítala en `index.html` (sección `id="timeline"`): cada `<li>` es un hito; la clase `now` marca el actual y `nx` el próximo. Si agregas texto en español, envuélvelo en `<span data-i18n="clave">` y agrega esa clave al diccionario `I18N` en `script.js` (ver sección de idioma más abajo).
+Edítala en `index.html` (sección `id="timeline"`): cada `<li>` es un hito; la clase `now` marca el actual y `nx` el próximo. Si agregas un hito con texto propio, márcalo con `data-i18n` y agrega la clave en `i18n.js` (ver la sección de idioma más abajo).
 
 ## Idioma (ES/EN)
-El botón de arriba a la derecha alterna el sitio entre español e inglés. Funciona marcando el texto traducible con `data-i18n="clave"` en el HTML y agregando `clave: {es:'...', en:'...'}` al objeto `I18N` en `script.js`. No traduce automáticamente el contenido de los writeups (cada uno se queda en el idioma en que lo escribiste) ni los textos de la terminal.
+Todo el sitio (menú, secciones, terminal, CV, mensajes de error y páginas de writeups) usa `i18n.js`, que se carga en todas las páginas. La preferencia se guarda en el navegador (y si no hay ninguna, se usa el idioma del navegador).
+- En el HTML: `data-i18n="clave"` (texto), `data-i18n-html="clave"` (con etiquetas) o `data-i18n-attr="aria-label:clave;placeholder:otra"` (atributos).
+- En `i18n.js`, dentro del objeto `D`: `clave: {es:'...', en:'...'}`. Los valores pueden ser funciones (`s=>'texto '+s`) para mensajes con datos.
+- En JS: `DB.t('clave')`. Para redibujar contenido dinámico al cambiar de idioma, escucha el evento `darthbear:lang`.
+- Si el texto tiene un ícono al lado, envuélvelo en un `<span data-i18n>` para no borrar el ícono.
+No se traduce automáticamente el contenido de los writeups (cada uno queda en el idioma en que lo escribiste) ni los datos que vienen de GitHub.
 
-## CV en PDF
-`assets/cv.pdf` se genera con `scripts/gen_cv.py` (usa reportlab). Para actualizarlo cuando cambien tus certificados, stats de HTB, etc.:
+## CV en PDF (español e inglés)
+`scripts/gen_cv.py` genera `assets/cv.pdf` (ES) y `assets/cv-en.pdf` (EN) con reportlab; el botón "Descargar CV" enlaza al que corresponde al idioma activo. Para actualizarlos cuando cambien tus certificados, stats de HTB, etc.:
     pip install reportlab --break-system-packages   # si no lo tienes
     cd scripts && python3 gen_cv.py
-Sobrescribe `assets/cv.pdf`. El botón "Descargar CV" ya está enlazado en la sección About.
+Edita los textos en el diccionario `TXT` del script (hay uno por idioma).
 
 ## Stats en vivo de GitHub
 La tarjeta del proyecto `recon` consulta `api.github.com/repos/xX-DarthBear-Xx/recon` desde el navegador del visitante para mostrar estrellas y fecha de la última actualización. Si el repo cambia de nombre o la API falla (límite de 60 solicitudes/hora sin autenticación), simplemente no se muestra esa línea y el resto de la tarjeta sigue igual.

@@ -92,3 +92,6 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 @media(max-width:800px){.tl{margin:16px 12px 0}}
 
 .cc{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;padding-top:14px;border-top:1px solid var(--ln)}.cc a{display:inline-flex;align-items:center;gap:6px;color:var(--dm)}.cc a:hover{color:var(--rd)}
+/* fixes i18n: los <span> de texto no deben heredar el estilo de las barras/subtítulos */
+.sk span.dl{height:auto;background:none}
+.rm details p span{color:inherit;font-size:inherit}

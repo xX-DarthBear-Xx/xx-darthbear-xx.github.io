@@ -80,7 +80,7 @@ PAGE = '''<!doctype html>
 <nav class="top2"><a href="{base}index.html">← DARTHBEAR</a><a href="{base}writeups.html">Writeups</a></nav>
 <header><h1>{title}</h1><p class="wmeta">{meta}</p><p class="tag">{tags}</p></header>
 <article class="md">{body}</article>
-</main></body></html>
+</main><script src="{base}i18n.js"></script></body></html>
 '''
 
 items = []

@@ -7,7 +7,7 @@
 
 *Break. Understand. Secure.*
 
-[Portafolio](https://xx-darthbear-xx.github.io) · [CV (PDF)](assets/cv.pdf) · [GitHub](https://github.com/xX-DarthBear-Xx) · [Hack The Box](https://app.hackthebox.com/users/828180) · [LinkedIn](https://www.linkedin.com/in/kevin-carballo-herrera-245428389) · [Email](mailto:kevincarballoherrera@gmail.com)
+[Portafolio](https://xx-darthbear-xx.github.io) · [CV (ES)](assets/cv.pdf) · [CV (EN)](assets/cv-en.pdf) · [GitHub](https://github.com/xX-DarthBear-Xx) · [Hack The Box](https://app.hackthebox.com/users/828180) · [LinkedIn](https://www.linkedin.com/in/kevin-carballo-herrera-245428389) · [Email](mailto:kevincarballoherrera@gmail.com)
 
 </div>
 

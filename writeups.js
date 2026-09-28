@@ -23,13 +23,14 @@ const meta=w=>[w.date,w.os,w.difficulty,w.minutes?w.minutes+' min':''].filter(Bo
 const tags=w=>(w.tags||[]).map(t=>'#'+esc(t)).join(' ');
 const link=w=>w.url||('writeup.html?w='+encodeURIComponent(w.slug));
 
-const T={comingTitle:{es:'Coming soon',en:'Coming soon'},comingBody:{es:'Aquí publicaré mis writeups de Hack The Box y laboratorios.',en:'My Hack The Box and lab writeups will go here.'},
- noResults:{es:'Sin resultados',en:'No results'},noResultsBody:{es:'Prueba con otra búsqueda o tag.',en:'Try another search or tag.'}};
-const L=()=>document.documentElement.lang==='en'?'en':'es';
+const tr=(k,...a)=>DB.t(k,...a);
+const soon=(title,body)=>`<p class="soon"><b>${esc(title)}</b>${esc(body)}</p>`;
 
-// Home: últimos 5
+// Home: últimos 5 (si no hay writeups se conserva el "Próximamente" estático del HTML)
 const wl=$('#wlist');
-if(wl)idx().then(a=>{if(!a.length)return;wl.innerHTML=a.slice(0,5).map(w=>`<a class="row" href="${link(w)}"><span class="ic"><svg class="i"><use href="#doc"/></svg></span><span><b>${esc(w.title)}</b><time>${meta(w)}</time><em>${tags(w)}</em></span></a>`).join('')+'<a class="more" href="writeups.html">View all writeups <svg class="i s"><use href="#ar"/></svg></a>'});
+if(wl)idx().then(a=>{if(!a.length)return;
+ const draw=()=>{wl.innerHTML=a.slice(0,5).map(w=>`<a class="row" href="${link(w)}"><span class="ic"><svg class="i"><use href="#doc"/></svg></span><span><b>${esc(w.title)}</b><time>${meta(w)}</time><em>${tags(w)}</em></span></a>`).join('')+`<a class="more" href="writeups.html">${esc(tr('viewAllWriteups'))} <svg class="i s"><use href="#ar"/></svg></a>`};
+ draw();document.addEventListener('darthbear:lang',draw)});
 
 // Listado con búsqueda y filtro por tag
 const all=$('#wall');
@@ -37,17 +38,18 @@ if(all)idx().then(a=>{let tag='',q='';const chips=$('#wt');
  const T2=[...new Set(a.flatMap(w=>w.tags||[]))].sort();
  const draw=()=>{const f=a.filter(w=>(!tag||(w.tags||[]).includes(tag))&&(w.title+' '+(w.summary||'')+' '+(w.tags||[]).join(' ')).toLowerCase().includes(q));
   chips.innerHTML=T2.map(t=>`<button class="${t===tag?'on':''}" data-t="${esc(t)}">#${esc(t)}</button>`).join('');
-  all.innerHTML=f.length?f.map(w=>`<article class="item"><h3><a href="${link(w)}">${esc(w.title)}</a></h3><time>${meta(w)}</time><p>${esc(w.summary||'')}</p><p class="tag">${tags(w)}</p></article>`).join(''):`<p class="soon"><b>${a.length?T.noResults[L()]:T.comingTitle[L()]}</b>${a.length?T.noResultsBody[L()]:T.comingBody[L()]}</p>`};
+  all.innerHTML=f.length?f.map(w=>`<article class="item"><h3><a href="${link(w)}">${esc(w.title)}</a></h3><time>${meta(w)}</time><p>${esc(w.summary||'')}</p><p class="tag">${tags(w)}</p></article>`).join(''):(a.length?soon(tr('noResults'),tr('noResultsBody')):soon(tr('comingTitle'),tr('soon')))};
  chips.onclick=e=>{const t=e.target.dataset&&e.target.dataset.t;if(t!==undefined){tag=tag===t?'':t;draw()}};
  $('#wq').oninput=e=>{q=e.target.value.toLowerCase();draw()};draw();
  document.addEventListener('darthbear:lang',draw)});
 
-// Visor de un writeup
+// Visor de un writeup (writeup.html?w=slug)
 const view=$('#md');
 if(view){const slug=new URLSearchParams(location.search).get('w')||'';
- if(!/^[\w-]+$/.test(slug))view.innerHTML='<p class="soon"><b>No encontrado</b>Falta el writeup.</p>';
+ const fail=body=>{view.innerHTML=soon(tr('notFound'),tr(body));document.addEventListener('darthbear:lang',()=>{view.innerHTML=soon(tr('notFound'),tr(body))})};
+ if(!/^[\w-]+$/.test(slug))fail('wMissing');
  else fetch('content/writeups/'+slug+'.md').then(r=>{if(!r.ok)throw 0;return r.text()}).then(t=>{const[m,body]=fm(t);
   document.title=(m.title||slug)+' · DarthBear';
   $('#wh').innerHTML=`<h1>${esc(m.title||slug)}</h1><p class="wmeta">${[m.date,m.os,m.difficulty].filter(Boolean).map(esc).join(' · ')}</p><p class="tag">${(m.tags||'').split(',').filter(s=>s.trim()).map(s=>'#'+esc(s.trim())).join(' ')}</p>`;
-  view.innerHTML=md(body)}).catch(()=>view.innerHTML='<p class="soon"><b>No encontrado</b>Ese writeup no existe.</p>')}
+  view.innerHTML=md(body)}).catch(()=>fail('wGone'))}
 })();
