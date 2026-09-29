@@ -95,3 +95,15 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 /* fixes i18n: los <span> de texto no deben heredar el estilo de las barras/subtítulos */
 .sk span.dl{height:auto;background:none}
 .rm details p span{color:inherit;font-size:inherit}
+/* experience */
+.exp{margin:16px 20px 0}
+.jobhead{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--ln)}
+.jobhead b{display:block;font-size:14px}
+.jobhead .jobsub{color:var(--rd);font-size:12px}
+.jobhead time{color:var(--dm);font-size:12px;white-space:nowrap}
+.joblist{list-style:none;margin:0 0 16px;padding:0;columns:2;column-gap:24px}
+.joblist li{position:relative;padding-left:16px;margin:0 0 8px;font-size:12px;color:var(--tx);break-inside:avoid}
+.joblist li::before{content:"›";position:absolute;left:0;color:var(--rd)}
+.skl{display:flex;flex-wrap:wrap;gap:8px}
+.skl span{border:1px solid var(--ln);padding:3px 10px;font-size:11px;color:var(--dm)}
+@media(max-width:800px){.exp{margin:16px 12px 0}.joblist{columns:1}}

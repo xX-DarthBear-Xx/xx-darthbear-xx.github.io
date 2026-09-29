@@ -48,7 +48,7 @@ const C={
  clear:()=>{out.textContent='';return ''},
  exit:()=>{term.hidden=true;return ''}
 };
-['about','lab','writeups','projects','roadmap','timeline','contact'].forEach(s=>C[s]=()=>(go(s),t('opening',s)));
+['about','lab','writeups','projects','experience','roadmap','timeline','contact'].forEach(s=>C[s]=()=>(go(s),t('opening',s)));
 const E={'sudo su':()=>t('sudoSu'),'sudo rm -rf /':()=>t('rmrf'),'cat /etc/motd':()=>t('motto')};
 const run=c=>{if(E[c])return E[c]();const[n,...a]=c.split(/\s+/);return C[n]?C[n](a):t('cmdNo',c)};
 const hist=[];let hi=0;

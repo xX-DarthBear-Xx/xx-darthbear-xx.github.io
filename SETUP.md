@@ -35,7 +35,7 @@ Todo el sitio (menú, secciones, terminal, CV, mensajes de error y páginas de w
 No se traduce automáticamente el contenido de los writeups (cada uno queda en el idioma en que lo escribiste) ni los datos que vienen de GitHub.
 
 ## CV en PDF (español e inglés)
-`scripts/gen_cv.py` genera `assets/cv.pdf` (ES) y `assets/cv-en.pdf` (EN) con reportlab; el botón "Descargar CV" enlaza al que corresponde al idioma activo. Para actualizarlos cuando cambien tus certificados, stats de HTB, etc.:
+`scripts/gen_cv.py` genera `assets/cv.pdf` (ES) y `assets/cv-en.pdf` (EN) con reportlab; el botón "Descargar CV" enlaza al que corresponde al idioma activo. El CV salta de página solo si el contenido no cabe en una. Para actualizarlo cuando cambien tus certificados, tu experiencia laboral o tus stats de HTB, edita las listas `EXP_ES`/`EXP_EN`/`SKILLS` y el diccionario `TXT` del script y corre:
     pip install reportlab --break-system-packages   # si no lo tienes
     cd scripts && python3 gen_cv.py
 Edita los textos en el diccionario `TXT` del script (hay uno por idioma).
